@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="<%= locale() %>">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= gettext "Play memory/concentration game with friends over the Internet without registration" %>">
+    <meta name="author" content="Max Gorin">
+    <meta content='/images/landing.jpg' property='og:image'>
+    <title><%= gettext "Ahihi Gumi" %></title>
+    <link rel="stylesheet" href='<%= static_path(@conn, "/css/app.css") %>'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+  </head>
+
+  <body>
+    <div id="main" class="container <%= if assigns[:full_width], do: "container--full-width" %>">
+      <%= if assigns[:mini_header] do %>
+        <header class="header clearfix">
+          <h4>
+            <%= link to: "/#{locale()}" do %>
+              <img class="header-logo--sm" src="/images/owl.svg" alt="pairs one logo"/>
+              Ahihi Gumi
+            <% end %>
+          </h4>
+        </header>
+      <% else %>
+        <header class="header clearfix">
+          <div class="row">
+            <div class="col-sm-6">
+              <h1 class="title centered-content">
+                <img class="header-logo--lg" src="/images/owl.svg" alt="pairs one logo"/>
+                Ahihi Gumi
+              </h1>
+            </div>
+            <div class="col-sm-6"><h2><%= gettext "Ahihi Gumi" %></h2></div>
+          </div>
+          <h3><%= gettext "Unload your mind while improving your memory" %></h3>
+        </header>
+      <% end %>
+
+      <div class='<%= if assigns[:full_width], do: "container--full-width" %>'>
+        <p class='alert alert-info' role="alert"><%= get_flash(@conn, :info) %></p>
+        <p class='alert alert-danger' role="alert"><%= get_flash(@conn, :error) %></p>
+        <p class='alert alert-success' role="alert"><%= get_flash(@conn, :warning) %></p>
+        <%= render @view_module, @view_template, assigns %>
+      </div>
+    </div> <!-- /container -->
+    <script src='<%= static_path(@conn, "/js/app.js") %>'></script>
+    <script src='<%= static_path(@conn, "/js/ahihi-gumi.js") %>'></script>
+
+    <%= if Application.get_env(:pairs_one, :ga) do %>
+      <%= render "ga.html" %>
+    <% end %>
+  </body>
+</html>
+  
