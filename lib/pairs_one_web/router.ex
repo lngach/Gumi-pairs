@@ -24,8 +24,8 @@ defmodule PairsOneWeb.Router do
   scope "/:locale", PairsOneWeb do
     pipe_through(:browser)
 
-    get("/", PageController, :index)
-    get("/start", PageController, :ahihi_index)
+    get("/start", PageController, :index)
+    get("/", PageController, :ahihi_index)
     post("/games/random", GameController, :random)
     resources("/games", GameController, only: [:new, :create, :show, :index])
   end
