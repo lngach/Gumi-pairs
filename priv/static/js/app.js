@@ -7547,6 +7547,14 @@ require.register("elm/elm-stuff/packages/elm-lang/websocket/1.0.2/src/WebSocket.
 
 });
 
+;require.register("js/ahihi-gumi.js", function(exports, require, module) {
+'use strict';
+
+$(document).ready(function () {
+    $('#buttonToAutoClick').trigger('click');
+});
+});
+
 ;require.register("js/app.js", function(exports, require, module) {
 'use strict';
 

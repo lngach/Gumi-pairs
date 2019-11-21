@@ -10,9 +10,10 @@ defmodule PairsOneWeb.GameController do
   end
 
   def create(conn, %{"game" => game}) do
+    theme = Enum.random(["eighties", "animals", "animals2", "fairy_tales", "pokemon", "halloween", "music", "owls", "cats", "robots"])
     game =
       if game[:random] == nil do
-        Map.merge(game, %{"random" => false})
+        Map.merge(game, %{"random" => false, "theme" => theme})
       else
         game
       end
