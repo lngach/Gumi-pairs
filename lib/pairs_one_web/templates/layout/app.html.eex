@@ -7,7 +7,7 @@
     <meta name="description" content="<%= gettext "Play memory/concentration game with friends over the Internet without registration" %>">
     <meta name="author" content="Max Gorin">
     <meta content='/images/landing.jpg' property='og:image'>
-    <title><%= gettext "Ahihi Gumi" %></title>
+    <title><%= gettext "gumi Vietnam - Memory Game" %></title>
     <link rel="stylesheet" href='<%= static_path(@conn, "/css/app.css") %>'>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
   </head>
@@ -19,7 +19,7 @@
           <h4>
             <%= link to: "/#{locale()}" do %>
               <img class="header-logo--sm" src="/images/owl.svg" alt="pairs one logo"/>
-              Ahihi Gumi
+              gumi Vietnam - Memory Game
             <% end %>
           </h4>
         </header>
@@ -29,10 +29,10 @@
             <div class="col-sm-6">
               <h1 class="title centered-content">
                 <img class="header-logo--lg" src="/images/owl.svg" alt="pairs one logo"/>
-                Ahihi Gumi
+                gumi Vietnam - Memory Game
               </h1>
             </div>
-            <div class="col-sm-6"><h2><%= gettext "Ahihi Gumi" %></h2></div>
+            <div class="col-sm-6"><h2><%= gettext "gumi Vietnam" %></h2></div>
           </div>
           <h3><%= gettext "Unload your mind while improving your memory" %></h3>
         </header>

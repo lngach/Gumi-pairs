@@ -53,10 +53,12 @@ defmodule PairsOneWeb.GameController do
     if game do
       redirect(conn, to: game_path(conn, :show, game.id))
     else
+      :random.seed(:erlang.now)
+      theme = Enum.random(["eighties", "animals", "animals2", "fairy_tales", "pokemon", "halloween", "music", "owls", "cats", "robots"])
       game =
         %{
-          "theme" => "eighties",
-          "board_size" => "6",
+          "theme" => theme,
+          "board_size" => "4",
           "players_number" => "2",
           "visibility" => "public",
           "random" => true
